@@ -133,6 +133,8 @@ send_netflow_v5(struct FLOW **flows, int num_flows, int nfsock,
 			offset += sizeof(*flw);
 			j++;
 			hdr->flows++;
+            printf("%u,%u,%u,%u,%u,%u\n", flw->src_ip, flw->src_port, flw->dest_ip, flw->dest_port,
+                flw->flow_packets, flw->flow_octets);
 		}
 
 		flw = (struct NF5_FLOW *)(packet + offset);
@@ -157,6 +159,8 @@ send_netflow_v5(struct FLOW **flows, int num_flows, int nfsock,
 			offset += sizeof(*flw);
 			j++;
 			hdr->flows++;
+            printf("%u,%u,%u,%u,%u,%u\n", flw->src_ip, flw->src_port, flw->dest_ip, flw->dest_port,
+                flw->flow_packets, flw->flow_octets);
 		}
 	}
 
