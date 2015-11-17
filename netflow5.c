@@ -160,7 +160,7 @@ send_netflow_v5(struct FLOW **flows, int num_flows, int nfsock,
 			j++;
 			hdr->flows++;
             printf("%u,%u,%u,%u,%u,%u,%u\n", flw->src_ip, flw->src_port, flw->dest_ip, flw->dest_port,
-                flw->protocol, flw->flow_packets, flw->flow_octets);
+                flw->protocol, ntohl(flw->flow_packets), ntohl(flw->flow_octets));
 		}
 	}
 
