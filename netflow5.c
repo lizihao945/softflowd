@@ -159,8 +159,8 @@ send_netflow_v5(struct FLOW **flows, int num_flows, int nfsock,
 			offset += sizeof(*flw);
 			j++;
 			hdr->flows++;
-            printf("%s,%u,%s,%u,%u,%u,%u\n", inet_ntoa(flows[i]->addr[0].v4), flw->src_port, inet_ntoa(flows[i]->addr[1].v4), flw->dest_port,
-                flw->protocol, ntohl(flw->flow_packets), ntohl(flw->flow_octets));
+            printf("%s,%u,%s,%u,%u,%u,%u,%u\n", inet_ntoa(flows[i]->addr[0].v4), flw->src_port, inet_ntoa(flows[i]->addr[1].v4), flw->dest_port,
+                flw->tcp_flags,flw->protocol, ntohl(flw->flow_packets), ntohl(flw->flow_octets));
 		}
 	}
 
